@@ -1,10 +1,10 @@
 @import '~@angular/material/theming';
 
-@mixin anms-styles-reset-theme($theme) {
+@mixin asmb-styles-reset-theme($theme) {
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
   $foreground: map-get($theme, foreground);
-
+  $facebook: map-get($theme, facebook);
   a {
     color: mat-color($foreground, text);
 

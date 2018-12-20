@@ -1,21 +1,26 @@
 <!doctype html>
 <html>
+
 <head>
   <base href="/">
-  <title>AngularNgrxMaterialStarter</title>
+  <title>Asambe</title>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:title" content="Angular NgRx Material Starter Project by @tomastrajan">
-  <meta property="og:description" content="Angular NgRx Material Starter project with all the best practices, features and usage examples">
+  <meta property="og:title" content="Asambe">
+  <meta property="og:description" content="Asambe is the new way to travel, it gives drivers opportunity to make extra cash by taking passengers going their way
+  and passengers the opportunity to choose how they want to travel.">
   <meta property="og:image" content="/angular-ngrx-material-starter/intro.3e2d7713f2cb475efa85.jpg">
-  <meta property="og:url" content="https://tomastrajan.github.io/angular-ngrx-material-starter">
+  <meta property="og:url" content="https://asambe.mobi/app">
 
   <link rel="icon" type="image/png" href="./assets/logo.png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style type="text/css">
-    body, html {
+    body,
+    html {
       height: 100%;
     }
+
     .app-loading {
       position: relative;
       display: flex;
@@ -57,10 +62,12 @@
         stroke-dasharray: 1, 200;
         stroke-dashoffset: 0;
       }
+
       50% {
         stroke-dasharray: 89, 200;
         stroke-dashoffset: -35px;
       }
+
       100% {
         stroke-dasharray: 89, 200;
         stroke-dashoffset: -124px;
@@ -68,22 +75,28 @@
     }
   </style>
 </head>
+
 <body>
-  <anms-root>
+  <asmb-root>
     <div class="app-loading">
       <div class="logo">
-      <svg class="spinner" viewBox="25 25 50 50">
-        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
-      </svg>
-    </div>
-  </anms-root>
+        <svg class="spinner" viewBox="25 25 50 50">
+          <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
+      </div>
+  </asmb-root>
   <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
     ga('create', 'UA-53234284-5', 'auto');
   </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCM7P4NaJ3JmhbIAsD_csVZq7Sy5a5R5A&libraries=places&language=en"></script>
+  </script>
 </body>
+
 </html>

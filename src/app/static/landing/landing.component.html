@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="main-heading">{{ 'asmb.landing.title' | translate }}</h1>
+      <h5>Keke are you riding? Are you driving? Said you never ever leave...</h5>
+    <br>
+    </div>
+  </div>
+  <div class="row align-items-end">
+    <div *ngFor="let feature of features" class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
+      <mat-card>
+        <mat-card-title>
+          {{feature.name | translate}}
+        </mat-card-title>
+        <mat-card-subtitle>
+          {{ feature.description | translate }}
+        </mat-card-subtitle>
+        <mat-card-actions>
+            <button mat-button color='primary' (click)="handleClick(feature.type === 'driver' ? 'Driver' : 'Passenger')">{{ 'asmb.landing.action-button' | translate}}</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

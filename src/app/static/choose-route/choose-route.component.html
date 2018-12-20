@@ -1,0 +1,17 @@
+<div class="container fluid">
+    <h1 class="main-heading">{{ 'asmb.choose-route.title' | translate }}</h1>
+  <div class="row">
+    <div class="offset-md-2 col-md-8 entry">
+        <form class="form" [formGroup]="form" (ngSubmit)="submit()">
+            <mat-form-field class="full-width">
+        <input #from matInput ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places"  placeholder="{{'asmb.choose-route.from-placeholder' | translate}}" formControlName="from"  (onAddressChange)="handleAddressChange('from', $event)">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input #to matInput ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" placeholder="{{'asmb.choose-route.to-placeholder' | translate}}" formControlName="to"  (onAddressChange)="handleAddressChange('to', $event)">
+      </mat-form-field>
+      <button mat-raised-button color="primary" [ngClass]="routeAnimationsElements" [disabled]="!valid">Proceed</button>
+    </form>
+    <hr class="invisible-rule" />
+    </div>
+  </div>
+</div>

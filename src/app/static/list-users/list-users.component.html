@@ -5,16 +5,16 @@
     </div>
   </div>
   <div class="row align-items-end">
-    <div *ngFor="let feature of features" class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
+    <div *ngFor="let user of users" class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
       <mat-card>
         <mat-card-title>
-          <code *ngIf="feature.version">{{feature.version}}</code>{{feature.name | translate}}
+          <code *ngIf="user.name">{{user.name}}</code>{{user.name}}
         </mat-card-title>
         <mat-card-subtitle>
-          {{ feature.description | translate }}
+          {{ user.name}} {{user.surname}}
         </mat-card-subtitle>
         <mat-card-actions>
-          <a *ngIf="feature.github" mat-icon-button [href]="feature.github" target="_blank">
+         <!-- <a *ngIf="feature.github" mat-icon-button [href]="feature.github" target="_blank">
             <fa-icon [icon]="['fab','github']"></fa-icon>
           </a>
           <a mat-button [href]="feature.documentation" target="_blank">
@@ -22,9 +22,10 @@
           </a>
           <a *ngIf="feature.medium" mat-button [href]="feature.medium" target="_blank">
             <fa-icon [icon]="['fab','medium-m']"></fa-icon>{{ 'anms.features.guide' | translate }}
-          </a>
+          </a>-->
         </mat-card-actions>
       </mat-card>
     </div>
   </div>
 </div>
+

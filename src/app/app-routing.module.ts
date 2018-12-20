@@ -6,13 +6,13 @@ import { SettingsContainerComponent } from './settings';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'about',
+    redirectTo: 'landing',
     pathMatch: 'full'
   },
   {
     path: 'settings',
     component: SettingsContainerComponent,
-    data: { title: 'anms.menu.settings' }
+    data: { title: 'asmb.menu.settings' }
   },
   {
     path: 'examples',
@@ -28,7 +28,7 @@ const routes: Routes = [
   // useHash supports github.io demo page, remove in your app
   imports: [
     RouterModule.forRoot(routes, {
-      useHash: true,
+      useHash: false,
       scrollPositionRestoration: 'enabled'
     })
   ],

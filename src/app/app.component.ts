@@ -20,9 +20,10 @@ import {
   selectSettingsLanguage,
   selectSettingsStickyHeader
 } from './settings';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'anms-root',
+  selector: 'asmb-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [routeAnimations]
@@ -35,13 +36,13 @@ export class AppComponent implements OnInit {
   logo = require('../assets/logo.png');
   languages = ['en', 'de', 'sk', 'fr', 'es', 'pt-br', 'zh-cn'];
   navigation = [
-    { link: 'about', label: 'anms.menu.about' },
-    { link: 'features', label: 'anms.menu.features' },
-    { link: 'examples', label: 'anms.menu.examples' }
+    { link: 'about', label: 'asmb.menu.about' },
+    { link: 'features', label: 'asmb.menu.features' },
+    { link: 'examples', label: 'asmb.menu.examples' }
   ];
   navigationSideMenu = [
     ...this.navigation,
-    { link: 'settings', label: 'anms.menu.settings' }
+    { link: 'settings', label: 'asmb.menu.settings' }
   ];
 
   isAuthenticated$: Observable<boolean>;
@@ -51,7 +52,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     private store: Store<AppState>,
-    private storageService: LocalStorageService
+    private storageService: LocalStorageService,
+    private router: Router
   ) {}
 
   private static isIEorEdgeOrSafari() {
@@ -75,7 +77,8 @@ export class AppComponent implements OnInit {
   }
 
   onLoginClick() {
-    this.store.dispatch(new ActionAuthLogin());
+    // this.store.dispatch(new ActionAuthLogin());
+    this.router.navigate(['register']);
   }
 
   onLogoutClick() {

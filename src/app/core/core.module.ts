@@ -24,7 +24,12 @@ import { AppErrorHandler } from './error-handler/app-error-handler.service';
 import { CustomSerializer } from './router/custom-serializer';
 import { NotificationService } from './notifications/notification.service';
 import { GoogleAnalyticsEffects } from './google-analytics/google-analytics.effects';
-
+import { AuthenticationService } from './auth/authentication.service';
+import { HttpService } from './http/http-service';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 @NgModule({
   imports: [
     // angular
@@ -38,7 +43,7 @@ import { GoogleAnalyticsEffects } from './google-analytics/google-analytics.effe
     environment.production
       ? []
       : StoreDevtoolsModule.instrument({
-          name: 'Angular NgRx Material Starter'
+          name: 'Asambe'
         }),
 
     // 3rd party
@@ -48,7 +53,11 @@ import { GoogleAnalyticsEffects } from './google-analytics/google-analytics.effe
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireStorageModule //
   ],
   declarations: [],
   providers: [
@@ -58,6 +67,8 @@ import { GoogleAnalyticsEffects } from './google-analytics/google-analytics.effe
     AnimationsService,
     httpInterceptorProviders,
     TitleService,
+    AuthenticationService,
+    HttpService,
     { provide: ErrorHandler, useClass: AppErrorHandler },
     { provide: RouterStateSerializer, useClass: CustomSerializer }
   ],

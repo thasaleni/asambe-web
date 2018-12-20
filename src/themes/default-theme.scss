@@ -1,5 +1,7 @@
-$anms-primary: mat-palette($mat-indigo, 800, 300, 900);
-$anms-accent: mat-palette($mat-light-blue);
-$anms-warn: mat-palette($mat-pink, 600);
-
-$anms-theme: mat-light-theme($anms-primary, $anms-accent, $anms-warn);
+$asmb-primary: mat-palette($mat-purple, 800, 300, 900);
+$asmb-accent: mat-palette($mat-light-green);
+$asmb-warn: mat-palette($mat-red, 600);
+$asmb-facebook: mat-palette($mat-blue);
+$asmb-twitter: mat-palette($mat-light-green);
+$asmb-google: mat-palette($mat-red);
+$asmb-theme: mat-light-theme($asmb-primary, $asmb-accent, $asmb-warn);

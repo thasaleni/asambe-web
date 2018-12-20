@@ -53,11 +53,10 @@ import {
   faBook
 } from '@fortawesome/free-solid-svg-icons';
 import {
-  faGithub,
-  faMediumM,
   faTwitter,
   faInstagram,
-  faYoutube
+  faYoutube,
+  faFacebook
 } from '@fortawesome/free-brands-svg-icons';
 
 library.add(
@@ -67,8 +66,7 @@ library.add(
   faCog,
   faRocket,
   faPlayCircle,
-  faGithub,
-  faMediumM,
+  faFacebook,
   faTwitter,
   faInstagram,
   faYoutube,

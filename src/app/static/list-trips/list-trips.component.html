@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="main-heading">{{ 'asmb.list-trips.title' | translate }}</h1>
+      </div>
+    </div>
+    <div class="row align-items-end">
+      <div *ngFor="let trip of trips" class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
+
+          <mat-card class="card">
+              <mat-card-header>
+                <div mat-card-avatar class="header-image" [ngStyle]="{'background' : 'url('+trip.owner.photoUrl+')', 'size': 'cover'}"></div>
+                <mat-card-title>{{trip.owner.name}} {{trip.owner.surname}}</mat-card-title>
+                <mat-card-subtitle><b>{{trip.owner.carMake}} {{trip.owner.carModel}}</b></mat-card-subtitle>
+              </mat-card-header>
+              <img mat-card-image [src]="trip.owner.photoUrl" alt="Driver photo">
+              <mat-card-actions>
+                <button mat-raised-button color="primary" (clic)="requestTrip(trip.owner)">{{'asmb.list-trips.request-ride' | translate}}</button>
+              </mat-card-actions>
+            </mat-card>
+
+
+
+
+
+        <!--<mat-card>
+          <mat-card-title>
+            <code *ngIf="trip.owner.carMake">{{trip.owner.carMake}} {{trip.owner.carModel}}</code>
+          </mat-card-title>
+          <mat-card-subtitle>
+            {{'asmb.list-trips.from' | translate}} {{ trip.route.from  }}
+            {{'asmb.list-trips.to' | translate}} {{ trip.route.to  }}
+          </mat-card-subtitle>
+          <mat-card-actions>
+           < <a *ngIf="feature.github" mat-icon-button [href]="feature.github" target="_blank">
+              <fa-icon [icon]="['fab','github']"></fa-icon>
+            </a>
+            <a mat-button [href]="feature.documentation" target="_blank">
+              <fa-icon icon="book"></fa-icon>{{ 'anms.features.documentation' | translate }}
+            </a>
+            <a *ngIf="feature.medium" mat-button [href]="feature.medium" target="_blank">
+              <fa-icon [icon]="['fab','medium-m']"></fa-icon>{{ 'anms.features.guide' | translate }}
+            </a>
+          </mat-card-actions>
+        </mat-card>-->
+      </div>
+    </div>
+  </div>

@@ -6,11 +6,12 @@
 const packageJson = require('../../package.json');
 
 export const environment = {
-  appName: 'Angular Ngrx Material Starter',
+  appName: 'Asambe',
   envName: 'DEV',
   production: false,
   test: false,
   i18nPrefix: '',
+  apiUrl: 'http://localhost:80',
   versions: {
     app: packageJson.version,
     angular: packageJson.dependencies['@angular/core'],
@@ -23,5 +24,13 @@ export const environment = {
     angularCli: packageJson.devDependencies['@angular/cli'],
     typescript: packageJson.devDependencies['typescript'],
     cypress: packageJson.devDependencies['cypress']
+  },
+  firebaseConfig: {
+    apiKey: 'AIzaSyA4SOha1LJLO7DgiMn8TTZHqapLzt2v8A0',
+    authDomain: 'fir-asambe.firebaseapp.com',
+    databaseURL: 'https://fir-asambe.firebaseio.com',
+    projectId: 'firebase-asambe',
+    storageBucket: 'firebase-asambe.appspot.com',
+    messagingSenderId: '281213318552'
   }
 };
