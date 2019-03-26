@@ -1,5 +1,6 @@
 <div class="container fluid">
     <h1 class="main-heading">{{ 'asmb.choose-route.title' | translate }}</h1>
+    <h5>Send me your location, lets focus on communication.</h5>
   <div class="row">
     <div class="offset-md-2 col-md-8 entry">
         <form class="form" [formGroup]="form" (ngSubmit)="submit()">
@@ -9,7 +10,12 @@
       <mat-form-field class="full-width">
         <input #to matInput ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" placeholder="{{'asmb.choose-route.to-placeholder' | translate}}" formControlName="to"  (onAddressChange)="handleAddressChange('to', $event)">
       </mat-form-field>
-      <button mat-raised-button color="primary" [ngClass]="routeAnimationsElements" [disabled]="!valid">Proceed</button>
+      <mat-form-field class="full-width">
+        <input  matInput [min]="minDate" [matDatepicker]="picker" placeholder="{{'asmb.choose-route.date-placeholder' | translate}}" formControlName="departureDate"  (click)="picker.open()">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker  #picker disabled="false"></mat-datepicker>
+      </mat-form-field>
+      <button mat-raised-button color="primary" [ngClass]="routeAnimationsElements" [disabled]="!form.valid">Proceed</button>
     </form>
     <hr class="invisible-rule" />
     </div>

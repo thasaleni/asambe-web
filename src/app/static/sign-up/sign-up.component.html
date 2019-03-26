@@ -1,27 +1,37 @@
-<h1 class="header">{{'asmb.sign-up.title' | translate}}</h1>
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-4">
+<div class="container fluid">
+    <h1 class="main-heading">{{'asmb.sign-up.title' | translate}}</h1>
+    <h5>If you want it you can get it. Come and sign up.</h5>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-4">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <button  mat-raised-button  type="button" color="primary" (click)="tryFacebookLogin()">
+            <fa-icon [icon]="['fab','facebook']"></fa-icon>
+            <span> Facebook</span>
+         </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <button  mat-raised-button  type="button" color="primary" (click)="tryGoogleLogin()">
+            <fa-icon [icon]="['fab','google']"></fa-icon>
+            <span> Google</span>
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <button  mat-raised-button  type="button" color="primary" (click)="tryTwitterLogin()" [disabled]="true">Login with Twitter</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <p>{{'asmb.common.privacy-policy-link' | translate}}<a href="http://asambe.mobi/privacy_policy.html">Privacy Policy </a></p>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <button  mat-raised-button  type="button" color="primary" (click)="tryFacebookLogin()">Login with Facebook</button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <button  mat-raised-button  type="button" color="primary" (click)="tryGoogleLogin()">Login with Google</button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <button  mat-raised-button  type="button" color="primary" (click)="tryTwitterLogin()" [disabled]="true">Login with Twitter</button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <p>{{'asmb.common.privacy-policy-link' | translate}}<a href="http://asambe.mobi/privacy_policy.html">Privacy Policy</a></p>
-    </div>
-  </div>
+
 </div>

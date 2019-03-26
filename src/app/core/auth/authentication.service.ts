@@ -4,6 +4,10 @@ import { HttpService } from '../http/http-service';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { OAuthUser } from '@app/store/oauth-user.model';
+import { environment } from '@env/environment';
+import { Trip, Car } from '@app/store/trip.model';
+import { Route } from '@app/store/route.model.';
+import { NotificationService } from '../notifications/notification.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,6 +15,7 @@ export class AuthenticationService {
   private _authenticated = false;
 
   constructor(
+    private readonly notificationService: NotificationService,
     private httpService: HttpService<User>,
     public afAuth: AngularFireAuth
   ) {}
@@ -115,9 +120,20 @@ export class AuthenticationService {
     });
   }
   saveUser(res: any) {
-    sessionStorage.setItem('user', JSON.stringify(User.fromOAuthResponse(res)));
+    const user = User.fromOAuthResponse(res);
+    if (user) {
+      sessionStorage.setItem('user', JSON.stringify(user));
+      this.notificationService.success('Login successful.');
+    } else {
+      this.notificationService.error(
+        'Uh, oh! There was an error with your login'
+      );
+    }
+    const route = <Route>JSON.parse(sessionStorage.getItem('route'));
+    const type = sessionStorage.getItem('type');
+    user.route = route;
+    this.httpService.post(environment.apiUrl + '/users/new', user).subscribe();
   }
-
   removeUser() {
     sessionStorage.removeItem('user');
   }

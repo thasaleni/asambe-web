@@ -15,7 +15,7 @@
     "clean": "rimraf ./dist/",
     "server": "node ./server.js",
     "prod": "npm run clean && npm run build:prod && npm run server",
-    "ci": "npm run clean && npm run format:test && ng lint && ng test --configuration=test --browsers ChromeTravisCi --code-coverage && ng e2e && npm run cy:ci && npm run accessibility && npm run build:prod -- --deploy-url /angular-ngrx-material-starter/ --base-href /angular-ngrx-material-starter",
+    "ci": "npm run clean && npm run format:test && ng lint && ng test --configuration=test --browsers ChromeTravisCi --code-coverage && ng e2e && npm run cy:ci && npm run accessibility && npm run build:prod -- --deploy-url /app/ --base-href /app",
     "release": "standard-version && git push --follow-tags origin master",
     "format:write": "prettier {src,e2e,cypress}/**/*.{ts,json,md,scss} --write",
     "format:test": "prettier {src,e2e,cypress}/**/*.{ts,json,md,scss} --list-different",
@@ -64,7 +64,7 @@
     "@fortawesome/angular-fontawesome": "^0.3.0",
     "@fortawesome/fontawesome-free": "^5.5.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.8",
-    "@fortawesome/free-brands-svg-icons": "^5.5.0",
+    "@fortawesome/free-brands-svg-icons": "^5.7.2",
     "@fortawesome/free-solid-svg-icons": "^5.5.0",
     "@ngrx/core": "^1.2.0",
     "@ngrx/effects": "^7.0.0-beta.0",
@@ -90,7 +90,7 @@
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.10.4",
+    "@angular-devkit/build-angular": "^0.12.3",
     "@angular-extensions/testing-library": "^3.0.3",
     "@angular/cli": "^7.0.4",
     "@angular/compiler-cli": "^7.0.3",

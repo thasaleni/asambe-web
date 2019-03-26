@@ -30,6 +30,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { WindowService } from './window/window.service';
 @NgModule({
   imports: [
     // angular
@@ -69,6 +70,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     TitleService,
     AuthenticationService,
     HttpService,
+    WindowService,
     { provide: ErrorHandler, useClass: AppErrorHandler },
     { provide: RouterStateSerializer, useClass: CustomSerializer }
   ],

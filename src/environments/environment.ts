@@ -11,7 +11,7 @@ export const environment = {
   production: false,
   test: false,
   i18nPrefix: '',
-  apiUrl: 'http://localhost:80',
+  apiUrl: 'http://localhost:8080/asambe/api',
   versions: {
     app: packageJson.version,
     angular: packageJson.dependencies['@angular/core'],

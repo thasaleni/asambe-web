@@ -1,0 +1,14 @@
+.form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+.invisible-rule {
+  clear: both;
+  border: 1px solid transparent;
+  height: 0px;
+}

@@ -1,4 +1,5 @@
 import { OAuthUser } from './oauth-user.model';
+import { Route } from './route.model.';
 
 export class User {
   id?: string;
@@ -8,6 +9,7 @@ export class User {
   cellphone?: string;
   photoUrl?: string;
   androidToken?: string;
+  route?: Route;
 
   public static fromOAuthResponse(oauthUser: OAuthUser): User {
     const user: User = new User();

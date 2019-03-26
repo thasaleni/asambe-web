@@ -10,8 +10,11 @@ import { ChooseRouteComponent } from './choose-route/choose-route.component';
 import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
 import { ListUsersComponent } from './list-users/list-users.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
-import { DriverDetailsComponent } from './driver-details/driver-details.component';
 import { ConfirmPhoneComponent } from './confirm-phone/confirm-phone.component';
+import { CarDetailsComponent } from './car-details/car-details.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ActiveTripComponent } from './active-trip/active-trip.component';
+import { PaymentComponent } from './payment/payment.component';
 @NgModule({
   imports: [GooglePlaceModule, SharedModule, StaticRoutingModule],
   declarations: [
@@ -21,8 +24,11 @@ import { ConfirmPhoneComponent } from './confirm-phone/confirm-phone.component';
     ChooseRouteComponent,
     ListUsersComponent,
     SignUpComponent,
-    DriverDetailsComponent,
-    ConfirmPhoneComponent
+    ConfirmPhoneComponent,
+    CarDetailsComponent,
+    ProfileComponent,
+    ActiveTripComponent,
+    PaymentComponent
   ]
 })
 export class StaticModule {}

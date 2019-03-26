@@ -5,4 +5,5 @@ export class Route {
   toId: string;
   fromProvince?: string;
   toProvince?: string;
+  departureDate: Date;
 }

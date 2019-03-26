@@ -1,0 +1,38 @@
+<div class="container fluid">
+  <h1 class="main-heading">{{ 'asmb.car-details.title' | translate }}</h1>
+  <h5>Watchu whip? whatchu nae nae?</h5>
+  <div class="row">
+    <div class="offset-md-2 col-md-8 entry">
+     <form class="form" [formGroup]="existingForm">
+        <mat-form-field class="full-width">
+            <mat-select placeholder="{{'asmb.car-details.select-existing-placeholder' | translate}}" formControlName="existing" [disabled]="!existingCars">
+            <mat-option>--</mat-option>
+            <mat-option *ngFor="let existingCar of existingCars | async" [value]="existingCar">
+              {{existingCar?.make}}|{{existingCar?.registration}}
+            </mat-option>
+          </mat-select>
+          <mat-hint>{{car?.year}}</mat-hint>
+        </mat-form-field>
+     </form>
+      <form class="form" [formGroup]="form" (ngSubmit)="submit()">
+        <mat-form-field class="full-width">
+          <input  matInput placeholder="{{'asmb.car-details.make-placeholder' | translate}}" formControlName="make">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <input  matInput placeholder="{{'asmb.car-details.model-placeholder' | translate}}" formControlName="model">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <input  matInput placeholder="{{'asmb.car-details.year-placeholder' | translate}}" formControlName="year">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <input  matInput  placeholder="{{'asmb.car-details.registration-placeholder' | translate}}" formControlName="registration">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <input  matInput type="number" placeholder="{{'asmb.car-details.capacity-placeholder' | translate}}" formControlName="capacity">
+        </mat-form-field>
+        <button mat-raised-button  color="primary" [ngClass]="routeAnimationsElements" [disabled]="!form.valid">Proceed</button>
+      </form>
+      <hr class="invisible-rule" />
+    </div>
+  </div>
+</div>

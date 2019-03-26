@@ -1,7 +1,8 @@
 <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1 class="main-heading">{{ 'asmb.list-trips.title' | translate }}</h1>
+        <h1 class="main-heading">{{ 'asmb.list-trips.title' | translate }} ({{trips?.length}})</h1>
+        <h5>They love they way I ride it.</h5>
       </div>
     </div>
     <div class="row align-items-end">
@@ -11,12 +12,13 @@
               <mat-card-header>
                 <div mat-card-avatar class="header-image" [ngStyle]="{'background' : 'url('+trip.owner.photoUrl+')', 'size': 'cover'}"></div>
                 <mat-card-title>{{trip.owner.name}} {{trip.owner.surname}}</mat-card-title>
-                <mat-card-subtitle><b>{{trip.owner.carMake}} {{trip.owner.carModel}}</b></mat-card-subtitle>
+                <mat-card-subtitle><b>{{trip.car.make}} {{trip.car.model}}</b></mat-card-subtitle>
               </mat-card-header>
               <img mat-card-image [src]="trip.owner.photoUrl" alt="Driver photo">
               <mat-card-actions>
                 <button mat-raised-button color="primary" (clic)="requestTrip(trip.owner)">{{'asmb.list-trips.request-ride' | translate}}</button>
               </mat-card-actions>
+              <mat-card-footer>Leaving at: {{trip.departureDate}}</mat-card-footer>
             </mat-card>
 
 

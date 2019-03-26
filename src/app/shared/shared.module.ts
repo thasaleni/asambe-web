@@ -56,7 +56,8 @@ import {
   faTwitter,
   faInstagram,
   faYoutube,
-  faFacebook
+  faFacebook,
+  faGoogle
 } from '@fortawesome/free-brands-svg-icons';
 
 library.add(
@@ -71,6 +72,7 @@ library.add(
   faInstagram,
   faYoutube,
   faPlus,
+  faGoogle,
   faEdit,
   faTrash,
   faTimes,
@@ -116,7 +118,7 @@ import { BigInputActionComponent } from './big-input/big-input-action.component'
     MatSnackBarModule,
     MatSlideToggleModule,
     MatDividerModule,
-
+    MatDatepickerModule,
     FontAwesomeModule
   ],
   declarations: [BigInputComponent, BigInputActionComponent],

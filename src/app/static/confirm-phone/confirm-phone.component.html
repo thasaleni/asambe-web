@@ -1,3 +1,26 @@
-<p>
-  confirm-phone works!
-</p>
+<div class="container fluid">
+  <h1 class="main-heading">{{ 'asmb.confirm-phone.title' | translate }}</h1>
+  <h5>You used to call me on my cellphone.</h5>
+  <div class="row">
+    <div class="offset-md-2 col-md-8 entry">
+      <form class="form" [formGroup]="form" (ngSubmit)="sendLoginCode()">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="{{'asmb.confirm-phone.phone-placeholder' | translate}}" formControlName="phone">
+          <mat-icon matSuffix>phone</mat-icon>
+          <mat-error *ngIf="!form.get('phone').isValid">{{'asmb.confirm-phone.phone-error' | translate}}</mat-error>
+        </mat-form-field >
+        <hr class="invisible-rule">
+        <div id="recaptcha-container"></div>
+        <hr class="invisible-rule">
+        <button mat-raised-button color="primary" [ngClass]="routeAnimationsElements" [disabled]="!form.valid">Get Verification</button>
+      </form>
+      <hr class="invisible-rule">
+        <mat-form-field class="full-width" *ngIf="windowRef.confirmationResult">
+          <input matInput placeholder="{{'asmb.confirm-phone.confirm-code-placeholder' | translate}}" type="text" [(ngModel)]="verificationCode">
+          <hr class="invisible-rule">
+          <button  type="button" mat-raised-button color="primary" [ngClass]="routeAnimationsElements" (click)="verifyLoginCode()" >Verify</button>
+        </mat-form-field>
+      <hr class="invisible-rule" />
+    </div>
+  </div>
+</div>

@@ -20,7 +20,7 @@ export class LandingComponent implements OnInit {
     window.open(link, '_blank');
   }
   handleClick(type: string) {
-    localStorage.clear();
+    sessionStorage.clear();
     sessionStorage.setItem('type', type);
     this.router.navigate(['choose-route']);
   }
